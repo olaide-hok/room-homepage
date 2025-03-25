@@ -1,0 +1,10 @@
+// Typography
+$font-family: "Josefin Sans", sans-serif;
+
+// colors
+$black: #000000;
+$white: #ffffff;
+
+@mixin hoverText {
+  cursor: pointer;
+}
