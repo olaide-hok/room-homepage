@@ -41,6 +41,29 @@ ul {
   list-style-type: none;
 }
 
+/* Overlay styles */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000; /* Dark blue background */
+  opacity: 0.5;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+#overlay.d-none {
+  opacity: 0;
+  pointer-events: none; /* Disable interaction when hidden */
+}
+
+#overlay.d-flex {
+  opacity: 0.5;
+  pointer-events: auto; /* Enable interaction when visible */
+}
+
 main.container .hero {
   position: relative;
 }
@@ -106,9 +129,14 @@ main.container .hero .slider-wrapper .slide .content .wrapper .shop-now {
   letter-spacing: 12.5px;
   text-transform: uppercase;
 }
-main.container .hero .slider-wrapper .slide .content .wrapper .shop-now:hover {
+main.container .hero .slider-wrapper .slide .content .wrapper:hover {
   cursor: pointer;
+}
+main.container .hero .slider-wrapper .slide .content .wrapper:hover .shop-now {
   color: #a0a0a0;
+}
+main.container .hero .slider-wrapper .slide .content .wrapper:hover svg path {
+  fill: #a0a0a0;
 }
 main.container .hero .slider-btns {
   position: absolute;
@@ -128,6 +156,25 @@ main.container .hero .slider-btns .left-btn:hover,
 main.container .hero .slider-btns .right-btn:hover {
   background-color: #444444;
   cursor: pointer;
+}
+main.container .mobile_nav {
+  background-color: #ffffff;
+  column-gap: 4.13875rem;
+  padding: 3.0625rem 1.375rem 2.875rem 1.63875rem;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+}
+main.container .mobile_nav .links {
+  column-gap: 1.9375rem;
+}
+main.container .mobile_nav .links li a {
+  color: #000000;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.667px;
+  text-transform: lowercase;
 }
 main.container .about {
   display: grid;

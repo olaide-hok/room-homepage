@@ -51,6 +51,29 @@ ul {
   list-style-type: none;
 }
 
+/* Overlay styles */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000; /* Dark blue background */
+  opacity: 0.5;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+#overlay.d-none {
+  opacity: 0;
+  pointer-events: none; /* Disable interaction when hidden */
+}
+
+#overlay.d-flex {
+  opacity: 0.5;
+  pointer-events: auto; /* Enable interaction when visible */
+}
+
 main {
   &.container {
     .hero {
@@ -125,10 +148,16 @@ main {
                 line-height: 16px; /* 106.667% */
                 letter-spacing: 12.5px;
                 text-transform: uppercase;
-
-                &:hover {
-                  cursor: pointer;
+              }
+              &:hover {
+                cursor: pointer;
+                .shop-now {
                   color: #a0a0a0;
+                }
+                svg {
+                  path {
+                    fill: #a0a0a0;
+                  }
                 }
               }
             }
@@ -153,6 +182,29 @@ main {
           &:hover {
             background-color: #444444;
             cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .mobile_nav {
+      background-color: $white;
+      column-gap: rem(66.22);
+      padding: rem(49) rem(22) rem(46) rem(26.22);
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 3;
+
+      .links {
+        column-gap: rem(31);
+        li {
+          a {
+            color: $black;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: -0.667px;
+            text-transform: lowercase;
           }
         }
       }
