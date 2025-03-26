@@ -51,11 +51,288 @@ ul {
   list-style-type: none;
 }
 
+main {
+  &.container {
+    .hero {
+      position: relative;
+
+      .navigation {
+        display: flex;
+        height: rem(14);
+        column-gap: rem(116);
+        margin: 3rem 0 0 1.5rem;
+
+        position: absolute;
+        z-index: 1;
+        .mobile-menu {
+        }
+        .links {
+          display: none;
+        }
+      }
+
+      .slider-wrapper {
+        .slide {
+          .image {
+            .desktop {
+              display: none;
+            }
+          }
+          .content {
+            padding: rem(56) 2rem;
+            .title {
+              color: $black;
+              font-family: "League Spartan";
+              font-size: 40px;
+              font-weight: 600;
+              letter-spacing: -1.667px;
+            }
+            .desc {
+              color: #a0a0a0;
+              font-size: 16px;
+              font-weight: 500;
+              line-height: 22px; /* 137.5% */
+              letter-spacing: -0.333px;
+              margin: rem(15) 0 rem(41);
+            }
+            .wrapper {
+              display: flex;
+              column-gap: rem(30);
+              .shop-now {
+                color: $black;
+                font-size: 15px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 16px; /* 106.667% */
+                letter-spacing: 12.5px;
+                text-transform: uppercase;
+
+                &:hover {
+                  cursor: pointer;
+                  color: #a0a0a0;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .slider-btns {
+        position: absolute;
+        right: 0;
+        top: 19rem;
+        z-index: 1;
+        width: rem(112);
+        height: rem(56);
+        display: flex;
+
+        .left-btn,
+        .right-btn {
+          background-color: $black;
+          width: rem(56);
+
+          &:hover {
+            background-color: #444444;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr;
+
+      .img-1 img,
+      .img-2 img {
+        width: rem(375);
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: rem(15);
+        padding: 2.5rem 2rem 2rem;
+        text-align: justify;
+
+        .title {
+          color: $black;
+          font-size: 14px;
+          font-weight: 700;
+          line-height: 22px; /* 157.143% */
+          letter-spacing: 5.833px;
+          text-transform: uppercase;
+        }
+        .desc {
+          color: #a0a0a0;
+          font-size: 1rem;
+          font-weight: 500;
+          line-height: 22px; /* 137.5% */
+          letter-spacing: -0.333px;
+        }
+      }
+    }
+  }
+}
+
 @media screen and (min-width: 768px) {
+  main {
+    &.container {
+      .hero {
+        position: relative;
+
+        .navigation {
+          display: flex;
+          height: rem(14);
+          column-gap: rem(116);
+          margin: 3rem 0 0 1.5rem;
+
+          position: absolute;
+          z-index: 1;
+          .mobile-menu {
+            display: none;
+          }
+          .links {
+            display: flex;
+            column-gap: rem(31);
+          }
+        }
+
+        .slider-wrapper {
+          .slide {
+            display: flex;
+
+            .image {
+              .desktop {
+                display: block;
+              }
+              .mobile {
+                display: none;
+              }
+            }
+            .content {
+              padding: rem(120) rem(100) rem(153);
+            }
+          }
+        }
+
+        .slider-btns {
+          right: 30.5rem;
+          bottom: 0;
+          top: unset;
+        }
+      }
+
+      .about {
+        grid-template-columns: repeat(3, 1fr);
+
+        .img-1 img,
+        .img-2 img {
+          width: 100%;
+        }
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 1024px) {
+  main {
+    &.container {
+      .hero {
+        position: relative;
+
+        .navigation {
+          display: flex;
+          height: rem(14);
+          column-gap: rem(116);
+          margin: 4rem 0 0 rem(71);
+
+          .mobile-menu {
+            display: none;
+          }
+          .links {
+            display: flex;
+            column-gap: rem(31);
+            li {
+              a {
+                color: $white;
+                font-size: 16px;
+                font-weight: 600;
+                letter-spacing: -0.667px;
+                text-transform: lowercase;
+
+                position: relative;
+                &:hover::after {
+                  content: "";
+                  border-bottom: 2px solid $white;
+                  position: absolute;
+                  bottom: -12px;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  width: 44%;
+                }
+              }
+            }
+          }
+        }
+
+        .slider-wrapper {
+          .slide {
+            display: flex;
+
+            .image {
+              .desktop {
+                display: block;
+              }
+              .mobile {
+                display: none;
+              }
+            }
+            .content {
+              padding: rem(120) rem(100) rem(153);
+              .title {
+                font-size: 3rem;
+                letter-spacing: -2px;
+              }
+              .desc {
+                margin: rem(18) 0 rem(26);
+              }
+            }
+          }
+        }
+
+        .slider-btns {
+          right: 30.5rem;
+          bottom: 0;
+          top: unset;
+        }
+      }
+
+      .about {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        .content {
+          row-gap: 1rem;
+          padding: rem(68) 3rem rem(58);
+
+          .title {
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 22px; /* 137.5% */
+            letter-spacing: 6.667px;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 1440px) {
+  main {
+    &.container {
+      width: 1440px;
+    }
+  }
 }

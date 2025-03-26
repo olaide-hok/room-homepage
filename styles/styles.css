@@ -1,0 +1,270 @@
+/* General body styling */
+body {
+  position: relative; /* Ensures the body is positioned relative to its normal flow */
+  display: flex; /* Enables flexbox layout */
+  justify-content: center; /* Centers content horizontally */
+  min-height: 100vh; /* Ensures the body takes up at least the full viewport height */
+  font-family: "League Spartan";
+  font-style: normal;
+  line-height: normal;
+  background: #ffffff;
+  font-feature-settings: "liga" off, "clig" off;
+}
+
+/* Media query for screens with a width of up to 375px */
+@media screen and (max-width: 375px) {
+  body {
+    min-height: 100%; /* Ensures the body takes up at least the full height of its parent container */
+  }
+}
+.d-none {
+  display: none;
+}
+
+.d-flex {
+  display: flex;
+}
+
+button {
+  border: none;
+  background: none;
+}
+button:hover {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+main.container .hero {
+  position: relative;
+}
+main.container .hero .navigation {
+  display: flex;
+  height: 0.875rem;
+  column-gap: 7.25rem;
+  margin: 3rem 0 0 1.5rem;
+  position: absolute;
+  z-index: 1;
+}
+main.container .hero .navigation .links {
+  display: none;
+}
+main.container .hero .slider-wrapper .slide .image .desktop {
+  display: none;
+}
+main.container .hero .slider-wrapper .slide .content {
+  padding: 3.5rem 2rem;
+}
+main.container .hero .slider-wrapper .slide .content .title {
+  color: #000000;
+  font-family: "League Spartan";
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: -1.667px;
+}
+main.container .hero .slider-wrapper .slide .content .desc {
+  color: #a0a0a0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px; /* 137.5% */
+  letter-spacing: -0.333px;
+  margin: 0.9375rem 0 2.5625rem;
+}
+main.container .hero .slider-wrapper .slide .content .wrapper {
+  display: flex;
+  column-gap: 1.875rem;
+}
+main.container .hero .slider-wrapper .slide .content .wrapper .shop-now {
+  color: #000000;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px; /* 106.667% */
+  letter-spacing: 12.5px;
+  text-transform: uppercase;
+}
+main.container .hero .slider-wrapper .slide .content .wrapper .shop-now:hover {
+  cursor: pointer;
+  color: #a0a0a0;
+}
+main.container .hero .slider-btns {
+  position: absolute;
+  right: 0;
+  top: 19rem;
+  z-index: 1;
+  width: 7rem;
+  height: 3.5rem;
+  display: flex;
+}
+main.container .hero .slider-btns .left-btn,
+main.container .hero .slider-btns .right-btn {
+  background-color: #000000;
+  width: 3.5rem;
+}
+main.container .hero .slider-btns .left-btn:hover,
+main.container .hero .slider-btns .right-btn:hover {
+  background-color: #444444;
+  cursor: pointer;
+}
+main.container .about {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+main.container .about .img-1 img,
+main.container .about .img-2 img {
+  width: 23.4375rem;
+}
+main.container .about .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0.9375rem;
+  padding: 2.5rem 2rem 2rem;
+  text-align: justify;
+}
+main.container .about .content .title {
+  color: #000000;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 22px; /* 157.143% */
+  letter-spacing: 5.833px;
+  text-transform: uppercase;
+}
+main.container .about .content .desc {
+  color: #a0a0a0;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 22px; /* 137.5% */
+  letter-spacing: -0.333px;
+}
+
+@media screen and (min-width: 768px) {
+  main.container .hero {
+    position: relative;
+  }
+  main.container .hero .navigation {
+    display: flex;
+    height: 0.875rem;
+    column-gap: 7.25rem;
+    margin: 3rem 0 0 1.5rem;
+    position: absolute;
+    z-index: 1;
+  }
+  main.container .hero .navigation .mobile-menu {
+    display: none;
+  }
+  main.container .hero .navigation .links {
+    display: flex;
+    column-gap: 1.9375rem;
+  }
+  main.container .hero .slider-wrapper .slide {
+    display: flex;
+  }
+  main.container .hero .slider-wrapper .slide .image .desktop {
+    display: block;
+  }
+  main.container .hero .slider-wrapper .slide .image .mobile {
+    display: none;
+  }
+  main.container .hero .slider-wrapper .slide .content {
+    padding: 7.5rem 6.25rem 9.5625rem;
+  }
+  main.container .hero .slider-btns {
+    right: 30.5rem;
+    bottom: 0;
+    top: unset;
+  }
+  main.container .about {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  main.container .about .img-1 img,
+  main.container .about .img-2 img {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main.container .hero {
+    position: relative;
+  }
+  main.container .hero .navigation {
+    display: flex;
+    height: 0.875rem;
+    column-gap: 7.25rem;
+    margin: 4rem 0 0 4.4375rem;
+  }
+  main.container .hero .navigation .mobile-menu {
+    display: none;
+  }
+  main.container .hero .navigation .links {
+    display: flex;
+    column-gap: 1.9375rem;
+  }
+  main.container .hero .navigation .links li a {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.667px;
+    text-transform: lowercase;
+    position: relative;
+  }
+  main.container .hero .navigation .links li a:hover::after {
+    content: "";
+    border-bottom: 2px solid #ffffff;
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 44%;
+  }
+  main.container .hero .slider-wrapper .slide {
+    display: flex;
+  }
+  main.container .hero .slider-wrapper .slide .image .desktop {
+    display: block;
+  }
+  main.container .hero .slider-wrapper .slide .image .mobile {
+    display: none;
+  }
+  main.container .hero .slider-wrapper .slide .content {
+    padding: 7.5rem 6.25rem 9.5625rem;
+  }
+  main.container .hero .slider-wrapper .slide .content .title {
+    font-size: 3rem;
+    letter-spacing: -2px;
+  }
+  main.container .hero .slider-wrapper .slide .content .desc {
+    margin: 1.125rem 0 1.625rem;
+  }
+  main.container .hero .slider-btns {
+    right: 30.5rem;
+    bottom: 0;
+    top: unset;
+  }
+  main.container .about {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  main.container .about .content {
+    row-gap: 1rem;
+    padding: 4.25rem 3rem 3.625rem;
+  }
+  main.container .about .content .title {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 22px; /* 137.5% */
+    letter-spacing: 6.667px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  main.container {
+    width: 1440px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
