@@ -25,11 +25,11 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./room-homepage.png)
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Link](https://olaide-hok.github.io/room-homepage/)
 
 ## My process
 
@@ -51,4 +51,3 @@ Users should be able to:
 
 - Website - [Habeeb Kareem](https://habeeb-dev.netlify.app)
 - Frontend Mentor - [@olaide-hok](https://www.frontendmentor.io/profile/olaide-hok)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
