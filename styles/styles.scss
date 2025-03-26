@@ -72,10 +72,29 @@ main {
       }
 
       .slider-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
         .slide {
+          // Hide all slides by default
+          &.d-none {
+            display: none;
+          }
+
+          // Active slide styles
+          &.active {
+            display: flex;
+            flex-direction: column;
+          }
           .image {
             .desktop {
               display: none;
+              object-fit: cover;
+            }
+            .mobile {
+              object-fit: cover;
             }
           }
           .content {
@@ -196,13 +215,36 @@ main {
           .links {
             display: flex;
             column-gap: rem(31);
+
+            li {
+              a {
+                color: $white;
+                font-size: 16px;
+                font-weight: 600;
+                letter-spacing: -0.667px;
+                text-transform: lowercase;
+
+                position: relative;
+                &:hover::after {
+                  content: "";
+                  border-bottom: 2px solid $white;
+                  position: absolute;
+                  bottom: -12px;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  width: 44%;
+                }
+              }
+            }
           }
         }
 
         .slider-wrapper {
           .slide {
-            display: flex;
-
+            &.active {
+              display: flex;
+              flex-direction: row;
+            }
             .image {
               .desktop {
                 display: block;
@@ -254,33 +296,11 @@ main {
           .links {
             display: flex;
             column-gap: rem(31);
-            li {
-              a {
-                color: $white;
-                font-size: 16px;
-                font-weight: 600;
-                letter-spacing: -0.667px;
-                text-transform: lowercase;
-
-                position: relative;
-                &:hover::after {
-                  content: "";
-                  border-bottom: 2px solid $white;
-                  position: absolute;
-                  bottom: -12px;
-                  left: 50%;
-                  transform: translate(-50%, -50%);
-                  width: 44%;
-                }
-              }
-            }
           }
         }
 
         .slider-wrapper {
           .slide {
-            display: flex;
-
             .image {
               .desktop {
                 display: block;
@@ -334,5 +354,37 @@ main {
     &.container {
       width: 1440px;
     }
+  }
+}
+
+// Animation classes
+.slide-in-right {
+  animation: slideInRight 0.5s ease-in-out forwards;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.5s ease-in-out forwards;
+}
+
+// Keyframes for animations
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }

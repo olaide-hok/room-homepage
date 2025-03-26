@@ -55,8 +55,25 @@ main.container .hero .navigation {
 main.container .hero .navigation .links {
   display: none;
 }
+main.container .hero .slider-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+main.container .hero .slider-wrapper .slide.d-none {
+  display: none;
+}
+main.container .hero .slider-wrapper .slide.active {
+  display: flex;
+  flex-direction: column;
+}
 main.container .hero .slider-wrapper .slide .image .desktop {
   display: none;
+  object-fit: cover;
+}
+main.container .hero .slider-wrapper .slide .image .mobile {
+  object-fit: cover;
 }
 main.container .hero .slider-wrapper .slide .content {
   padding: 3.5rem 2rem;
@@ -163,8 +180,26 @@ main.container .about .content .desc {
     display: flex;
     column-gap: 1.9375rem;
   }
-  main.container .hero .slider-wrapper .slide {
+  main.container .hero .navigation .links li a {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.667px;
+    text-transform: lowercase;
+    position: relative;
+  }
+  main.container .hero .navigation .links li a:hover::after {
+    content: "";
+    border-bottom: 2px solid #ffffff;
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 44%;
+  }
+  main.container .hero .slider-wrapper .slide.active {
     display: flex;
+    flex-direction: row;
   }
   main.container .hero .slider-wrapper .slide .image .desktop {
     display: block;
@@ -205,26 +240,6 @@ main.container .about .content .desc {
     display: flex;
     column-gap: 1.9375rem;
   }
-  main.container .hero .navigation .links li a {
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: -0.667px;
-    text-transform: lowercase;
-    position: relative;
-  }
-  main.container .hero .navigation .links li a:hover::after {
-    content: "";
-    border-bottom: 2px solid #ffffff;
-    position: absolute;
-    bottom: -12px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 44%;
-  }
-  main.container .hero .slider-wrapper .slide {
-    display: flex;
-  }
   main.container .hero .slider-wrapper .slide .image .desktop {
     display: block;
   }
@@ -264,6 +279,34 @@ main.container .about .content .desc {
 @media screen and (min-width: 1440px) {
   main.container {
     width: 1440px;
+  }
+}
+.slide-in-right {
+  animation: slideInRight 0.5s ease-in-out forwards;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.5s ease-in-out forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
